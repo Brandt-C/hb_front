@@ -1,11 +1,27 @@
 
 
+
+
+
 const Login = () => {
+
+    let pass = '';
+    let uname = '';
     return (
-        <div>
-            <h1>This is oging to be the login/register page!</h1>
-        </div>
+        <form>
+            <div className="mb-3">
+                <label className="form-label">Username:</label>
+                <input type="email" {...uname} />
+            </div>
+            <div className="mb-3">
+                <label className="form-label">Password:</label>
+                <input type="password" {...pass} />
+            </div>
+            
+            <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
     );
 }
 
 export default Login;
+
