@@ -14,9 +14,8 @@ const App = () => {
       <Routes>
         <Route children path='/' element={<Home />} />
         <Route children path='/login' element={<Login />} />
-        <Route children path='/userhome' element={<UserHome />} />
         <Route children path='/reg' element={<RegForm />} />
-        
+        <Route children path='/userhome' element={<UserHome />} />
         {/* this is where we define any 'page' of the app within*/}
       </Routes>
     </div>
