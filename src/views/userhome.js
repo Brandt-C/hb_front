@@ -2,12 +2,17 @@
 
 
 
-const userHome = () => {
+const UserHome = () => {
     return (
-        <div>
-            <h1>Landing/Home page!!!!</h1>
+        <div className="container">
+            <div className="row justify-content-center">
+                <h1>Let's build your hood!</h1>
+            </div>
+            <div className="row justify-content-center">
+                
+            </div>
         </div>
     );
 }
 
-export default userHome;
+export default UserHome;
