@@ -1,7 +1,11 @@
 import React from "react";
-
+import './login.css';
+import { useContext } from "react";
+import { DataContext } from "../context/dataprovider";
 
 const Login = () => {
+    const {user, setUser} = useContext(DataContext)
+
     function handleChange(evt) {
         const value = evt.target.value;
         setState({
@@ -23,8 +27,9 @@ const Login = () => {
             return response.json();
             })
             .then(function(data) {
-                let user = data;
-                console.log(user);
+                let usertok = data;
+                setUser(usertok);
+                console.log(user)
                 return user
             })
 
@@ -38,8 +43,8 @@ const Login = () => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <form onSubmit={handleSubmit}>
-
+                <form id='loginform' onSubmit={handleSubmit}>
+                <h3>Login</h3>
                     <div className="mb-3">
                         <label className="form-label">Username:</label>
                         <input type="text" name="username" value={state.username} onChange={handleChange} />
