@@ -23,6 +23,7 @@ const UserHome = () => {
             body: JSON.stringify(newpost),
         })
             .then((res) => console.log(res.json()))
+            .then((response) => console.log(response))
 
     }
 
@@ -40,7 +41,7 @@ const UserHome = () => {
             <div className="row justify-content-center">
                 <iframe title='OSMmapframe' width="300" height="350" frameBorder="1" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-87.77818679809572%2C41.83171182161546%2C-87.55159378051758%2C41.94442556628153&amp;layer=mapnik&amp;marker=41.888093552297654%2C-87.66489028930664" style={{ border: 1 }}></iframe><br /><small><a href="https://www.openstreetmap.org/?mlat=41.8881&amp;mlon=-87.6649#map=13/41.8881/-87.6649">View Larger Map</a></small>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form >
                 <div className="row justify-content-start">
 
                     <div className="card" style={{ width: 18 + 'rem' }}>
@@ -53,7 +54,7 @@ const UserHome = () => {
                             <li className="list-group-item">By:</li>
                             <li className="list-group-item">When:</li>
                         </ul>
-                        <button type="submit" value='newpost' className="btn btn-success p-1 mb-1">Create Post</button>
+                        <button type="submit" value='newpost' className="btn btn-success p-1 mb-1" onClick={handleSubmit}>Create Post</button>
                         <button type="" value='mappin' className="btn btn-primary p-1">Pin to map</button>
                     </div>
 
