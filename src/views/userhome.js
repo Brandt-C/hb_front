@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import axios from 'axios';
+import React, { useContext, useState } from 'react';
+
 import { DataContext } from '../context/dataprovider';
 
 
@@ -10,9 +12,7 @@ const UserHome = () => {
             [evt.target.name]: value
         });
     }
-    // const disableButton = () => {
-    //     buttonRef.current.disabled = true;
-    // }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,12 +27,27 @@ const UserHome = () => {
 
     }
 
-    const {user} = useContext(DataContext)
+    const { user } = useContext(DataContext)
     const [newpost, setNewpost] = React.useState({
         userid: user.userid,
         title: '',
         body: '',
     })
+
+
+    const getPosts = async () => {
+        let response = await axios.get('http://127.0.0.1:5000/api/posts/' + user.userid);
+        return response.status === 200 ? response.data : null
+    }
+
+    const loadPosts = async () => {
+        let data = await getPosts();
+        console.log(data, typeof data)
+        setPosts(data)
+    }
+
+    const [posts, setPosts] = useState(() => loadPosts());
+
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -57,10 +72,26 @@ const UserHome = () => {
                         <button type="submit" value='newpost' className="btn btn-success p-1 mb-1" onClick={handleSubmit}>Create Post</button>
                         <button type="" value='mappin' className="btn btn-primary p-1">Pin to map</button>
                     </div>
-
+                    <div className='posts'>
+                        {typeof posts === 'object' && !posts.then ? posts['postdic'].map((post, index) => {
+                            return <>
+                            <div key={index} className="card-body">
+                                    <h5 className="card-title"><b>{post.title}</b></h5>
+                                    <p className="card-text">{post.body}</p>
+                                </div>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">{user.userid}</li>
+                                    <li className="list-group-item">{post.timestamp}</li>
+                                </ul></>
+                        }) :
+                        <p>loading posts. . . </p>
+                            
+                        
+                        }
                 </div>
-            </form>
         </div>
+            </form >
+        </div >
     );
 }
 
