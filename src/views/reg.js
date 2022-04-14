@@ -34,7 +34,8 @@ const RegForm = () => {
     })
     return (
         <div className="container">
-            <div className="row justify-content-center">
+            <h3>Register new user:</h3>
+            <div className="row mb-3 justify-content-center">
                 <form onSubmit={handleSubmit}>
 
                     <div className="mb-3">

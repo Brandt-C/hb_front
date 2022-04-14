@@ -42,7 +42,7 @@ const Login = () => {
 
     return (
         <div className="container">
-            <div className="row justify-content-center">
+            <div className="row mb-3 justify-content-center">
                 <form id='loginform' onSubmit={handleSubmit}>
                 <h3>Login</h3>
                     <div className="mb-3">
