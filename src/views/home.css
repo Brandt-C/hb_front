@@ -9,6 +9,8 @@ h1 {
     display: flex;
     background-color: rgb(223, 220, 220);
     
+    
+    border-radius: 2%;
 }
 
 #exp {
