@@ -1,5 +1,7 @@
 .App {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+  background-color: rgb(251, 244, 235);
 }
 
 .App-logo {

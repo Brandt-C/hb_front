@@ -33,11 +33,16 @@ const RegForm = () => {
         userpass: ''
     })
     return (
+        
         <div className="container">
-            <h3>Register new user:</h3>
+            
+        
             <div className="row mb-3 justify-content-center">
                 <form onSubmit={handleSubmit}>
-
+                    <div className="mb-3">
+                        <h3>Register new user:</h3>
+                    </div>
+                    
                     <div className="mb-3">
                         <label className="form-label">Username:</label>
                         <input type="text" name="username" value={state.username} onChange={handleChange} />

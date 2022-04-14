@@ -49,7 +49,7 @@ const UserHome = () => {
     const [posts, setPosts] = useState(() => loadPosts());
 
     return (
-        <div className="container">
+        <div className="containeruhome">
             <div className="row justify-content-center">
                 <h1>Let's build your hood!</h1>
             </div>

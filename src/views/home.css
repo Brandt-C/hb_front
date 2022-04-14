@@ -1,0 +1,24 @@
+* {
+    
+}
+h1 {
+   
+}
+
+.container {
+    display: flex;
+    background-color: rgb(223, 220, 220);
+    
+}
+
+#exp {
+    padding: 4px;
+    background-color: rgb(12, 10, 6);
+    color: rgb(251, 241, 226);
+    
+}
+#snap {
+    padding: 4px;
+    background-color: rgb(96, 94, 94);
+    
+}
