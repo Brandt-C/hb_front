@@ -71,7 +71,7 @@ const UserHome = () => {
                         </div>
                     </>
                 }) :
-                    <p>loading posts. . . </p>
+                    <p>loading posts. . . or do you have any?  Create new post below! </p>
                 }
             </div>
             <form >
