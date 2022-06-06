@@ -54,7 +54,18 @@ const UserHome = () => {
                 <h1>Let's build your hood!</h1>
             </div>
             <div className="row justify-content-center">
-                <iframe id='mapframe' title='OSMmapframe' width="300" height="350" frameBorder="1" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-87.77818679809572%2C41.83171182161546%2C-87.55159378051758%2C41.94442556628153&amp;layer=mapnik&amp;marker=41.888093552297654%2C-87.66489028930664" style={{ border: 1 }}></iframe><br /><small><a href="https://www.openstreetmap.org/?mlat=41.8881&amp;mlon=-87.6649#map=13/41.8881/-87.6649">View Larger Map @ OpenStreetMap</a></small>
+            <iframe
+            id="mapframe"
+            title="Gmapframe"
+            width="350"
+            height="300"
+            frameBorder={0}
+            style={{border:0}}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/search?key=%process.env.REACT_APP_API_KEY%&q=Eiffel+Tower,Paris+France">
+            </iframe>
             </div>
             <div className="row justify-content-center">
                 {typeof posts === 'object' && !posts.then ? posts['postdic'].map((post, index) => {
@@ -91,8 +102,6 @@ const UserHome = () => {
                     </div>
                 </div>
             </form >
-
-
         </div >
     );
 }
